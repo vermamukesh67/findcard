@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="FCHerokuGameCardView" customModule="FindCard" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="276" height="226"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OOE-Nc-m5f">
+                    <rect key="frame" x="0.0" y="44" width="276" height="182"/>
+                    <state key="normal" title="Button"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="OOE-Nc-m5f" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Jj5-eB-ba9"/>
+                <constraint firstItem="OOE-Nc-m5f" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="XIf-ge-WPG"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="OOE-Nc-m5f" secondAttribute="trailing" id="XV5-uR-PAU"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="OOE-Nc-m5f" secondAttribute="bottom" id="cpC-yq-1QY"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="37.681159420289859" y="-91.741071428571431"/>
+        </view>
+    </objects>
+</document>

@@ -7,23 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A5B266F246AEB940041B22E /* HerokuGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5B266E246AEB940041B22E /* HerokuGameViewModel.swift */; };
 		4A938613246AA20C00AD5CE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A938612246AA20C00AD5CE5 /* AppDelegate.swift */; };
-		4A938615246AA20C00AD5CE5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A938614246AA20C00AD5CE5 /* SceneDelegate.swift */; };
-		4A938617246AA20C00AD5CE5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A938616246AA20C00AD5CE5 /* ViewController.swift */; };
+		4A938617246AA20C00AD5CE5 /* HerokuGameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A938616246AA20C00AD5CE5 /* HerokuGameController.swift */; };
 		4A93861A246AA20C00AD5CE5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A938618246AA20C00AD5CE5 /* Main.storyboard */; };
 		4A93861C246AA21300AD5CE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A93861B246AA21300AD5CE5 /* Assets.xcassets */; };
 		4A93861F246AA21300AD5CE5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A93861D246AA21300AD5CE5 /* LaunchScreen.storyboard */; };
+		4A938628246AA53500AD5CE5 /* HerokuGameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A938626246AA53500AD5CE5 /* HerokuGameCell.swift */; };
+		4A938629246AA53500AD5CE5 /* HerokuGameCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A938627246AA53500AD5CE5 /* HerokuGameCell.xib */; };
+		4A93862E246AA7FE00AD5CE5 /* FCHerokuGameCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A93862D246AA7FE00AD5CE5 /* FCHerokuGameCardView.swift */; };
+		4A938630246AA83100AD5CE5 /* FCHerokuGameCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A93862F246AA83100AD5CE5 /* FCHerokuGameCardView.xib */; };
+		4A938632246AB52600AD5CE5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A938631246AB52600AD5CE5 /* SceneDelegate.swift */; };
+		4A938634246AB8DD00AD5CE5 /* FCUIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A938633246AB8DD00AD5CE5 /* FCUIViewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4A5B266E246AEB940041B22E /* HerokuGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HerokuGameViewModel.swift; sourceTree = "<group>"; };
 		4A93860F246AA20C00AD5CE5 /* FindCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A938612246AA20C00AD5CE5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4A938614246AA20C00AD5CE5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4A938616246AA20C00AD5CE5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4A938616246AA20C00AD5CE5 /* HerokuGameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HerokuGameController.swift; sourceTree = "<group>"; };
 		4A938619246AA20C00AD5CE5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4A93861B246AA21300AD5CE5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4A93861E246AA21300AD5CE5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4A938620246AA21300AD5CE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4A938626246AA53500AD5CE5 /* HerokuGameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HerokuGameCell.swift; sourceTree = "<group>"; };
+		4A938627246AA53500AD5CE5 /* HerokuGameCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HerokuGameCell.xib; sourceTree = "<group>"; };
+		4A93862D246AA7FE00AD5CE5 /* FCHerokuGameCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCHerokuGameCardView.swift; sourceTree = "<group>"; };
+		4A93862F246AA83100AD5CE5 /* FCHerokuGameCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FCHerokuGameCardView.xib; sourceTree = "<group>"; };
+		4A938631246AB52600AD5CE5 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		4A938633246AB8DD00AD5CE5 /* FCUIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCUIViewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,14 +69,44 @@
 			isa = PBXGroup;
 			children = (
 				4A938612246AA20C00AD5CE5 /* AppDelegate.swift */,
-				4A938614246AA20C00AD5CE5 /* SceneDelegate.swift */,
-				4A938616246AA20C00AD5CE5 /* ViewController.swift */,
+				4A938631246AB52600AD5CE5 /* SceneDelegate.swift */,
+				4A93862C246AA7BE00AD5CE5 /* FIndCard */,
+				4A93862A246AA53D00AD5CE5 /* Screens */,
 				4A938618246AA20C00AD5CE5 /* Main.storyboard */,
 				4A93861B246AA21300AD5CE5 /* Assets.xcassets */,
 				4A93861D246AA21300AD5CE5 /* LaunchScreen.storyboard */,
 				4A938620246AA21300AD5CE5 /* Info.plist */,
 			);
 			path = FindCard;
+			sourceTree = "<group>";
+		};
+		4A93862A246AA53D00AD5CE5 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				4A93862B246AA54800AD5CE5 /* HomeScreen */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		4A93862B246AA54800AD5CE5 /* HomeScreen */ = {
+			isa = PBXGroup;
+			children = (
+				4A938626246AA53500AD5CE5 /* HerokuGameCell.swift */,
+				4A938627246AA53500AD5CE5 /* HerokuGameCell.xib */,
+				4A938616246AA20C00AD5CE5 /* HerokuGameController.swift */,
+				4A5B266E246AEB940041B22E /* HerokuGameViewModel.swift */,
+			);
+			path = HomeScreen;
+			sourceTree = "<group>";
+		};
+		4A93862C246AA7BE00AD5CE5 /* FIndCard */ = {
+			isa = PBXGroup;
+			children = (
+				4A93862D246AA7FE00AD5CE5 /* FCHerokuGameCardView.swift */,
+				4A93862F246AA83100AD5CE5 /* FCHerokuGameCardView.xib */,
+				4A938633246AB8DD00AD5CE5 /* FCUIViewExtension.swift */,
+			);
+			path = FIndCard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,9 +167,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A938630246AA83100AD5CE5 /* FCHerokuGameCardView.xib in Resources */,
 				4A93861F246AA21300AD5CE5 /* LaunchScreen.storyboard in Resources */,
 				4A93861C246AA21300AD5CE5 /* Assets.xcassets in Resources */,
 				4A93861A246AA20C00AD5CE5 /* Main.storyboard in Resources */,
+				4A938629246AA53500AD5CE5 /* HerokuGameCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,9 +182,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A938617246AA20C00AD5CE5 /* ViewController.swift in Sources */,
+				4A938632246AB52600AD5CE5 /* SceneDelegate.swift in Sources */,
+				4A938634246AB8DD00AD5CE5 /* FCUIViewExtension.swift in Sources */,
+				4A5B266F246AEB940041B22E /* HerokuGameViewModel.swift in Sources */,
+				4A938617246AA20C00AD5CE5 /* HerokuGameController.swift in Sources */,
+				4A93862E246AA7FE00AD5CE5 /* FCHerokuGameCardView.swift in Sources */,
 				4A938613246AA20C00AD5CE5 /* AppDelegate.swift in Sources */,
-				4A938615246AA20C00AD5CE5 /* SceneDelegate.swift in Sources */,
+				4A938628246AA53500AD5CE5 /* HerokuGameCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
