@@ -15,16 +15,20 @@ struct HerokuGameViewModel {
     var openCardData: [Card] = []
     let minimumCardNumber = 1
     let maxmimumCardNumber = 100
+    mutating func resetGameData() {
+        allCardData.removeAll()
+        totalStpes = 0
+        for _ in 1...self.totalPairs {
+            let number = Int.random(in: minimumCardNumber ... maxmimumCardNumber)
+            allCardData.append(Card.init(name: String(number)))
+            allCardData.append(Card.init(name: String(number)))
+        }
+        allCardData.shuffle()
+    }
+    
     init(totalPair: Int) {
         self.totalPairs = totalPair
-        var arr: [Card] = []
-        for _ in 1...totalPair {
-            let number = Int.random(in: minimumCardNumber ... maxmimumCardNumber)
-            arr.append(Card.init(name: String(number)))
-            arr.append(Card.init(name: String(number)))
-        }
-        allCardData.append(contentsOf: arr)
-        allCardData.shuffle()
+        resetGameData()
     }
     func getData(index: Int) -> Card {
         return allCardData[index]
@@ -63,7 +67,10 @@ struct HerokuGameViewModel {
             break
         }
     }
-    var lastSelectedIndex: Int? = nil
+    mutating func increastTotalStep() {
+        totalStpes += 1
+    }
+    private(set) var totalStpes: Int = 0
 }
 class Card {
     var name: String

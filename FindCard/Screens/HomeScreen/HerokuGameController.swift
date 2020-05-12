@@ -11,16 +11,19 @@ import UIKit
 class HerokuGameController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     @IBOutlet var lblTotalSteps: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
-    var viewModel = HerokuGameViewModel(totalPair: 3)
+    var viewModel = HerokuGameViewModel(totalPair: 6)
+    var isResetData = false
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.register(UINib.init(nibName: "HerokuGameCell", bundle: Bundle.main), forCellWithReuseIdentifier: "HerokuGameCell")
-        self.collectionView.backgroundColor = UIColor.black.withAlphaComponent(0.4)
+        self.collectionView.backgroundColor = UIColor.black
     }
     @IBAction func btnRestartTapped(_ sender: Any) {
-        
+        viewModel.resetGameData()
+        isResetData = true
+        self.collectionView.reloadData()
+        isResetData = false
     }
-    
 }
 extension HerokuGameController {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -30,7 +33,7 @@ extension HerokuGameController {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HerokuGameCell", for: indexPath) as? HerokuGameCell else {
             return UICollectionViewCell()
         }
-        cell.updateCell(card: viewModel.getData(index: indexPath.row), disPlayText: viewModel.cardBackText)
+         cell.updateCell(card: viewModel.getData(index: indexPath.row), disPlayText: viewModel.cardBackText, isAnimate: isResetData)
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -46,5 +49,7 @@ extension HerokuGameController {
         }
         viewModel.updateCardStatus(index: indexPath.row)
         cell.updateCell(card: viewModel.getData(index: indexPath.row), disPlayText: viewModel.cardBackText, isAnimate: true)
+        viewModel.increastTotalStep()
+        self.lblTotalSteps.text = "STEPS: \(viewModel.totalStpes)"
     }
 }
