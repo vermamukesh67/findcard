@@ -10,8 +10,8 @@ public enum CardStatus {
 
 public class FCHerokuGameCardView: UIView {
     let flipAnimationDuration = 1.0
-    let openCardBGColor = UIColor.systemBlue
-    let closedCardBGColor = UIColor.lightGray
+    let openCardBGColor = UIColor.lightGray
+    let closedCardBGColor = UIColor.systemBlue
     /**
      Initializes and returns a newly allocated view object with the specified frame rectangle.
      - parameter frame:   The frame rectangle for the view
@@ -43,8 +43,6 @@ public class FCHerokuGameCardView: UIView {
         symBolButtton.widthAnchor.constraint(equalToConstant: self.frame.size.width).isActive = true
         symBolButtton.heightAnchor.constraint(equalToConstant: self.frame.size.height).isActive = true
         //symBolButtton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0).isActive = true
-        self.cardDisplayText = "?"
-        symBolButtton.setTitle(self.cardDisplayText, for: UIControl.State.normal)
         self.layoutIfNeeded()
     }
     lazy var symBolButtton: UIButton = {
@@ -52,27 +50,23 @@ public class FCHerokuGameCardView: UIView {
         button.backgroundColor = openCardBGColor
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         // initally minimum width and height required for button
-        button.addTarget(self, action: #selector(symbolButtonTap), for: UIControl.Event.touchUpInside)
         button.layer.cornerRadius = 2.0
         button.clipsToBounds = true
         button.layer.borderColor = UIColor.white.cgColor
         button.layer.borderWidth = 2.0
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.isUserInteractionEnabled = false
         return button
     } ()
     fileprivate func layoutUIForBackStatus() {
-        self.symBolButtton.setTitle(self.cardRevealedText, for: UIControl.State.normal)
         self.symBolButtton.backgroundColor = closedCardBGColor
     }
     fileprivate func layoutUIForFrontStatus() {
-        self.symBolButtton.setTitle(self.cardDisplayText, for: UIControl.State.normal)
         self.symBolButtton.backgroundColor = openCardBGColor
     }
     fileprivate func layoutUIForResolvedStatus() {
         layoutUIForFrontStatus()
-        self.symBolButtton.isUserInteractionEnabled = false
     }
-    
     @objc func symbolButtonTap() {
         self.isCardClosed = !self.isCardClosed
         (self.isCardClosed) ? layoutUIForFrontStatus() : layoutUIForBackStatus()
@@ -84,23 +78,35 @@ public class FCHerokuGameCardView: UIView {
     public func resetToDefaultState() {
         self.isCardClosed = true
         self.symBolButtton.isUserInteractionEnabled = self.isCardClosed
-        self.symBolButtton.setTitle((self.isCardClosed) ? self.cardDisplayText : self.cardRevealedText, for: UIControl.State.normal)
         self.symBolButtton.backgroundColor = (isCardClosed) ? openCardBGColor : closedCardBGColor
     }
-    public var selectionHandler: SelectionHandler?
+    public var selectionHandler: SelectionHandler? {
+        didSet {
+            if self.selectionHandler == nil {
+                self.symBolButtton.isUserInteractionEnabled = false
+                self.symBolButtton.removeTarget(self, action: #selector(symbolButtonTap), for: UIControl.Event.touchUpInside)
+            } else {
+                self.symBolButtton.isUserInteractionEnabled = true
+                   self.symBolButtton.addTarget(self, action: #selector(symbolButtonTap), for: UIControl.Event.touchUpInside)
+            }
+        }
+    }
     public var isCardClosed = true
-    public var cardRevealedText: String?
-    public var cardDisplayText: String?
     public var status: CardStatus = .back {
         didSet {
             switch self.status {
             case .back:
-                resetToDefaultState()
+                layoutUIForBackStatus()
             case .front:
-                resetToDefaultState()
+                layoutUIForFrontStatus()
             case .resloved:
-                resetToDefaultState()
+                layoutUIForResolvedStatus()
             }
+        }
+    }
+    public var text: String? {
+        didSet {
+            self.symBolButtton.setTitle(self.text, for: UIControl.State.normal)
         }
     }
 }

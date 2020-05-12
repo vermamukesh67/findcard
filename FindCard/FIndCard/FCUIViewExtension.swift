@@ -66,10 +66,10 @@ extension UIView {
             secondView.isHidden = false
         })
     }
-    @objc func flip(direction:UIView.AnimationOptions, duration: TimeInterval, completionHandler: @escaping CompletionHandler) {
+    @objc func flip(direction:UIView.AnimationOptions, duration: TimeInterval, completionHandler: CompletionHandler? = nil) {
         let transitionOptions: UIView.AnimationOptions = [direction, .showHideTransitionViews]
         UIView.transition(with: self, duration: duration, options: transitionOptions, animations: {
-            completionHandler()
+            completionHandler?()
         })
     }
 }
