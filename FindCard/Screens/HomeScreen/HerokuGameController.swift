@@ -19,10 +19,14 @@ class HerokuGameController: UIViewController, UICollectionViewDelegate, UICollec
         self.collectionView.backgroundColor = UIColor.black
     }
     @IBAction func btnRestartTapped(_ sender: Any) {
+       resetGame()
+    }
+    func resetGame() {
         viewModel.resetGameData()
         isResetData = true
         self.collectionView.reloadData()
         isResetData = false
+        self.lblTotalSteps.text = "STEPS: \(viewModel.totalStpes)"
     }
 }
 extension HerokuGameController {
@@ -44,12 +48,43 @@ extension HerokuGameController {
         return UIEdgeInsets.init(top: 10, left: 10, bottom: 10, right: 10)
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if viewModel.getStatus(index: indexPath.row) == .resloved {
+           return
+        }
         guard let cell = collectionView.cellForItem(at: indexPath) as? HerokuGameCell else {
             return
         }
-        viewModel.updateCardStatus(index: indexPath.row)
-        cell.updateCell(card: viewModel.getData(index: indexPath.row), disPlayText: viewModel.cardBackText, isAnimate: true)
+        viewModel.addDataIntoOpenCard(card: viewModel.getData(index: indexPath.row))
+        if viewModel.isPairMatched() {
+            viewModel.lastSelectedIndex = nil
+        } else {
+            if let lastSelectedIndex = viewModel.lastSelectedIndex {
+                viewModel.lastSelectedIndex = nil
+                let lastIndexPath = IndexPath.init(row: lastSelectedIndex, section: 0)
+                viewModel.setStaus(index: lastSelectedIndex, status: .back)
+                guard let prevSelectedcell = collectionView.cellForItem(at: lastIndexPath) as? HerokuGameCell else {
+                           return
+                       }
+                  prevSelectedcell.updateCell(card: viewModel.getData(index: lastSelectedIndex), disPlayText: viewModel.cardBackText, isAnimate: true)
+               
+            } else {
+                 viewModel.lastSelectedIndex = indexPath.row
+                viewModel.updateCardStatus(index: indexPath.row)
+            }
+        }
+         cell.updateCell(card: viewModel.getData(index: indexPath.row), disPlayText: viewModel.cardBackText, isAnimate: true)
         viewModel.increastTotalStep()
         self.lblTotalSteps.text = "STEPS: \(viewModel.totalStpes)"
+        checkForGameFinishStatus()
+    }
+    func checkForGameFinishStatus() {
+        if viewModel.isGameFinished() {
+            let actionSheet = UIAlertController(title: "Congratulations!", message: "You won this game by \(viewModel.totalStpes) steps", preferredStyle: .alert)
+            actionSheet.addAction(UIAlertAction(title: "Try another round", style: .default, handler: { (_)in
+                self.resetGame()
+            }))
+            self.present(actionSheet, animated: true, completion: {
+            })
+        }
     }
 }

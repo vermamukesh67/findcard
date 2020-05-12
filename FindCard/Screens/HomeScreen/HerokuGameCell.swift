@@ -25,6 +25,9 @@ class HerokuGameCell: UICollectionViewCell {
             }
         case .resloved:
             self.gmaeView.text = card.name
+            if isAnimate {
+                flip(direction: UIView.AnimationOptions.transitionFlipFromLeft, duration: flipAnimationDuration)
+            }
         default:
             self.gmaeView.text = disPlayText
             if isAnimate {

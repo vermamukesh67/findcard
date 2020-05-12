@@ -10,6 +10,7 @@ protocol HerokuGameDelegate {
 
 struct HerokuGameViewModel {
     var allCardData: [Card] = []
+    var revealedCardData: [Card] = []
     let numberOfCellPerRow = 3
     var totalPairs: Int
     var openCardData: [Card] = []
@@ -17,7 +18,10 @@ struct HerokuGameViewModel {
     let maxmimumCardNumber = 100
     mutating func resetGameData() {
         allCardData.removeAll()
+        revealedCardData.removeAll()
+        openCardData.removeAll()
         totalStpes = 0
+        lastSelectedIndex = nil
         for _ in 1...self.totalPairs {
             let number = Int.random(in: minimumCardNumber ... maxmimumCardNumber)
             allCardData.append(Card.init(name: String(number)))
@@ -33,6 +37,12 @@ struct HerokuGameViewModel {
     func getData(index: Int) -> Card {
         return allCardData[index]
     }
+    func getStatus(index: Int) -> CardStatus {
+        return allCardData[index].status
+    }
+    func setStaus(index: Int, status: CardStatus) {
+        allCardData[index].status = status
+    }
     func getTotalNumberOfCardData() -> Int {
         return allCardData.count
     }
@@ -42,14 +52,22 @@ struct HerokuGameViewModel {
     mutating func removeAlldataFromOpenCard() {
         openCardData.removeAll()
     }
+    var isCardAlreadyOpend: Bool {
+        return openCardData.count > 0
+    }
+    func isGameFinished() -> Bool {
+        return allCardData.count == revealedCardData.count
+    }
     mutating func isPairMatched() -> Bool {
         if self.openCardData.count == 2 {
             let matched = (self.openCardData[0].name == self.openCardData[1].name)
             if matched {
                 self.openCardData[0].status = .resloved
                 self.openCardData[1].status = .resloved
-                self.removeAlldataFromOpenCard()
+                self.revealedCardData.append(self.openCardData[0])
+                self.revealedCardData.append(self.openCardData[1])
             }
+            self.removeAlldataFromOpenCard()
             return matched
         }
         return false
@@ -71,6 +89,7 @@ struct HerokuGameViewModel {
         totalStpes += 1
     }
     private(set) var totalStpes: Int = 0
+    var lastSelectedIndex: Int? = nil
 }
 class Card {
     var name: String
