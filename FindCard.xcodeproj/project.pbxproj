@@ -1,0 +1,592 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4A5B266F246AEB940041B22E /* HerokuGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5B266E246AEB940041B22E /* HerokuGameViewModel.swift */; };
+		4A5B2673246B9E790041B22E /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5B2672246B9E790041B22E /* Card.swift */; };
+		4A5B2680246BB6ED0041B22E /* CardModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5B267F246BB6ED0041B22E /* CardModelTest.swift */; };
+		4A5B2688246BB79D0041B22E /* GameCardViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5B2687246BB79D0041B22E /* GameCardViewModelTest.swift */; };
+		4A5B268A246BC6C30041B22E /* CardCompoentTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5B2689246BC6C30041B22E /* CardCompoentTest.swift */; };
+		4A938613246AA20C00AD5CE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A938612246AA20C00AD5CE5 /* AppDelegate.swift */; };
+		4A938617246AA20C00AD5CE5 /* HerokuGameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A938616246AA20C00AD5CE5 /* HerokuGameController.swift */; };
+		4A93861A246AA20C00AD5CE5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A938618246AA20C00AD5CE5 /* Main.storyboard */; };
+		4A93861C246AA21300AD5CE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A93861B246AA21300AD5CE5 /* Assets.xcassets */; };
+		4A93861F246AA21300AD5CE5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A93861D246AA21300AD5CE5 /* LaunchScreen.storyboard */; };
+		4A938628246AA53500AD5CE5 /* HerokuGameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A938626246AA53500AD5CE5 /* HerokuGameCell.swift */; };
+		4A938629246AA53500AD5CE5 /* HerokuGameCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A938627246AA53500AD5CE5 /* HerokuGameCell.xib */; };
+		4A93862E246AA7FE00AD5CE5 /* FCHerokuGameCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A93862D246AA7FE00AD5CE5 /* FCHerokuGameCardView.swift */; };
+		4A938632246AB52600AD5CE5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A938631246AB52600AD5CE5 /* SceneDelegate.swift */; };
+		4A938634246AB8DD00AD5CE5 /* FCUIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A938633246AB8DD00AD5CE5 /* FCUIViewExtension.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4A5B2682246BB6ED0041B22E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4A938607246AA20C00AD5CE5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4A93860E246AA20C00AD5CE5;
+			remoteInfo = FindCard;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4A5B266E246AEB940041B22E /* HerokuGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HerokuGameViewModel.swift; sourceTree = "<group>"; };
+		4A5B2672246B9E790041B22E /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		4A5B267D246BB6ED0041B22E /* FindCardUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FindCardUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A5B267F246BB6ED0041B22E /* CardModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModelTest.swift; sourceTree = "<group>"; };
+		4A5B2681246BB6ED0041B22E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4A5B2687246BB79D0041B22E /* GameCardViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCardViewModelTest.swift; sourceTree = "<group>"; };
+		4A5B2689246BC6C30041B22E /* CardCompoentTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCompoentTest.swift; sourceTree = "<group>"; };
+		4A93860F246AA20C00AD5CE5 /* FindCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A938612246AA20C00AD5CE5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4A938616246AA20C00AD5CE5 /* HerokuGameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HerokuGameController.swift; sourceTree = "<group>"; };
+		4A938619246AA20C00AD5CE5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4A93861B246AA21300AD5CE5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4A93861E246AA21300AD5CE5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4A938620246AA21300AD5CE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4A938626246AA53500AD5CE5 /* HerokuGameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HerokuGameCell.swift; sourceTree = "<group>"; };
+		4A938627246AA53500AD5CE5 /* HerokuGameCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HerokuGameCell.xib; sourceTree = "<group>"; };
+		4A93862D246AA7FE00AD5CE5 /* FCHerokuGameCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCHerokuGameCardView.swift; sourceTree = "<group>"; };
+		4A938631246AB52600AD5CE5 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		4A938633246AB8DD00AD5CE5 /* FCUIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCUIViewExtension.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4A5B267A246BB6ED0041B22E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A93860C246AA20C00AD5CE5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4A5B2670246B9E590041B22E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4A938626246AA53500AD5CE5 /* HerokuGameCell.swift */,
+				4A938627246AA53500AD5CE5 /* HerokuGameCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4A5B2671246B9E600041B22E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4A5B266E246AEB940041B22E /* HerokuGameViewModel.swift */,
+				4A5B2672246B9E790041B22E /* Card.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4A5B2674246BA2740041B22E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4A938616246AA20C00AD5CE5 /* HerokuGameController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		4A5B2675246BA2940041B22E /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				4A938612246AA20C00AD5CE5 /* AppDelegate.swift */,
+				4A938631246AB52600AD5CE5 /* SceneDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		4A5B2676246BA2A60041B22E /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				4A93861D246AA21300AD5CE5 /* LaunchScreen.storyboard */,
+				4A938618246AA20C00AD5CE5 /* Main.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		4A5B2677246BA2B90041B22E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4A93861B246AA21300AD5CE5 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		4A5B267E246BB6ED0041B22E /* FindCardUnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				4A5B267F246BB6ED0041B22E /* CardModelTest.swift */,
+				4A5B2681246BB6ED0041B22E /* Info.plist */,
+				4A5B2687246BB79D0041B22E /* GameCardViewModelTest.swift */,
+				4A5B2689246BC6C30041B22E /* CardCompoentTest.swift */,
+			);
+			path = FindCardUnitTests;
+			sourceTree = "<group>";
+		};
+		4A938606246AA20C00AD5CE5 = {
+			isa = PBXGroup;
+			children = (
+				4A938611246AA20C00AD5CE5 /* FindCard */,
+				4A5B267E246BB6ED0041B22E /* FindCardUnitTests */,
+				4A938610246AA20C00AD5CE5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4A938610246AA20C00AD5CE5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4A93860F246AA20C00AD5CE5 /* FindCard.app */,
+				4A5B267D246BB6ED0041B22E /* FindCardUnitTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4A938611246AA20C00AD5CE5 /* FindCard */ = {
+			isa = PBXGroup;
+			children = (
+				4A5B2677246BA2B90041B22E /* Resources */,
+				4A5B2676246BA2A60041B22E /* Storyboard */,
+				4A5B2675246BA2940041B22E /* Delegate */,
+				4A93862C246AA7BE00AD5CE5 /* Compoents */,
+				4A93862A246AA53D00AD5CE5 /* Screens */,
+				4A938620246AA21300AD5CE5 /* Info.plist */,
+			);
+			path = FindCard;
+			sourceTree = "<group>";
+		};
+		4A93862A246AA53D00AD5CE5 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				4A93862B246AA54800AD5CE5 /* HomeScreen */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		4A93862B246AA54800AD5CE5 /* HomeScreen */ = {
+			isa = PBXGroup;
+			children = (
+				4A5B2674246BA2740041B22E /* Controller */,
+				4A5B2671246B9E600041B22E /* Model */,
+				4A5B2670246B9E590041B22E /* Views */,
+			);
+			path = HomeScreen;
+			sourceTree = "<group>";
+		};
+		4A93862C246AA7BE00AD5CE5 /* Compoents */ = {
+			isa = PBXGroup;
+			children = (
+				4A93862D246AA7FE00AD5CE5 /* FCHerokuGameCardView.swift */,
+				4A938633246AB8DD00AD5CE5 /* FCUIViewExtension.swift */,
+			);
+			path = Compoents;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4A5B267C246BB6ED0041B22E /* FindCardUnitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4A5B2684246BB6ED0041B22E /* Build configuration list for PBXNativeTarget "FindCardUnitTests" */;
+			buildPhases = (
+				4A5B2679246BB6ED0041B22E /* Sources */,
+				4A5B267A246BB6ED0041B22E /* Frameworks */,
+				4A5B267B246BB6ED0041B22E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4A5B2683246BB6ED0041B22E /* PBXTargetDependency */,
+			);
+			name = FindCardUnitTests;
+			productName = FindCardUnitTests;
+			productReference = 4A5B267D246BB6ED0041B22E /* FindCardUnitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4A93860E246AA20C00AD5CE5 /* FindCard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4A938623246AA21300AD5CE5 /* Build configuration list for PBXNativeTarget "FindCard" */;
+			buildPhases = (
+				4A93860B246AA20C00AD5CE5 /* Sources */,
+				4A93860C246AA20C00AD5CE5 /* Frameworks */,
+				4A93860D246AA20C00AD5CE5 /* Resources */,
+				4A5B2678246BB2A60041B22E /* Swift Lint */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FindCard;
+			productName = FindCard;
+			productReference = 4A93860F246AA20C00AD5CE5 /* FindCard.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4A938607246AA20C00AD5CE5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = com.mukesh;
+				TargetAttributes = {
+					4A5B267C246BB6ED0041B22E = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = 4A93860E246AA20C00AD5CE5;
+					};
+					4A93860E246AA20C00AD5CE5 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 4A93860A246AA20C00AD5CE5 /* Build configuration list for PBXProject "FindCard" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4A938606246AA20C00AD5CE5;
+			productRefGroup = 4A938610246AA20C00AD5CE5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4A93860E246AA20C00AD5CE5 /* FindCard */,
+				4A5B267C246BB6ED0041B22E /* FindCardUnitTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4A5B267B246BB6ED0041B22E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A93860D246AA20C00AD5CE5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A93861F246AA21300AD5CE5 /* LaunchScreen.storyboard in Resources */,
+				4A93861C246AA21300AD5CE5 /* Assets.xcassets in Resources */,
+				4A93861A246AA20C00AD5CE5 /* Main.storyboard in Resources */,
+				4A938629246AA53500AD5CE5 /* HerokuGameCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4A5B2678246BB2A60041B22E /* Swift Lint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Swift Lint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\nswiftlint \nelse\necho \"Error: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nexit 109\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4A5B2679246BB6ED0041B22E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A5B2680246BB6ED0041B22E /* CardModelTest.swift in Sources */,
+				4A5B2688246BB79D0041B22E /* GameCardViewModelTest.swift in Sources */,
+				4A5B268A246BC6C30041B22E /* CardCompoentTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A93860B246AA20C00AD5CE5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A938632246AB52600AD5CE5 /* SceneDelegate.swift in Sources */,
+				4A938634246AB8DD00AD5CE5 /* FCUIViewExtension.swift in Sources */,
+				4A5B266F246AEB940041B22E /* HerokuGameViewModel.swift in Sources */,
+				4A938617246AA20C00AD5CE5 /* HerokuGameController.swift in Sources */,
+				4A93862E246AA7FE00AD5CE5 /* FCHerokuGameCardView.swift in Sources */,
+				4A938613246AA20C00AD5CE5 /* AppDelegate.swift in Sources */,
+				4A938628246AA53500AD5CE5 /* HerokuGameCell.swift in Sources */,
+				4A5B2673246B9E790041B22E /* Card.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4A5B2683246BB6ED0041B22E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4A93860E246AA20C00AD5CE5 /* FindCard */;
+			targetProxy = 4A5B2682246BB6ED0041B22E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4A938618246AA20C00AD5CE5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4A938619246AA20C00AD5CE5 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4A93861D246AA21300AD5CE5 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4A93861E246AA21300AD5CE5 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4A5B2685246BB6ED0041B22E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = FindCardUnitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mukesh.FindCardUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FindCard.app/FindCard";
+			};
+			name = Debug;
+		};
+		4A5B2686246BB6ED0041B22E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = FindCardUnitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mukesh.FindCardUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FindCard.app/FindCard";
+			};
+			name = Release;
+		};
+		4A938621246AA21300AD5CE5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4A938622246AA21300AD5CE5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4A938624246AA21300AD5CE5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = FindCard/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mukesh.FindCard;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4A938625246AA21300AD5CE5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = FindCard/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mukesh.FindCard;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4A5B2684246BB6ED0041B22E /* Build configuration list for PBXNativeTarget "FindCardUnitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A5B2685246BB6ED0041B22E /* Debug */,
+				4A5B2686246BB6ED0041B22E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4A93860A246AA20C00AD5CE5 /* Build configuration list for PBXProject "FindCard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A938621246AA21300AD5CE5 /* Debug */,
+				4A938622246AA21300AD5CE5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4A938623246AA21300AD5CE5 /* Build configuration list for PBXNativeTarget "FindCard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A938624246AA21300AD5CE5 /* Debug */,
+				4A938625246AA21300AD5CE5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4A938607246AA20C00AD5CE5 /* Project object */;
+}
