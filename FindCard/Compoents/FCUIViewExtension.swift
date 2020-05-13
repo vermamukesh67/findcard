@@ -20,9 +20,9 @@ extension UIView {
         NSLayoutConstraint(item: self, attribute: .bottom, relatedBy: .equal, toItem: container, attribute: .bottom, multiplier: 1.0, constant: 0).isActive = true
     }
     /// Flips the view.
-    @objc func flip(direction:UIView.AnimationOptions, duration: TimeInterval, completionHandler: CompletionHandler? = nil) {
+    @objc func flip(direction: UIView.AnimationOptions, duration: TimeInterval, completionHandler: CompletionHandler? = nil) {
         let transitionOptions: UIView.AnimationOptions = [direction, .showHideTransitionViews]
-        UIView.transition(with: self, duration: duration, options: transitionOptions, animations: nil, completion: { isCompleted in
+        UIView.transition(with: self, duration: duration, options: transitionOptions, animations: nil, completion: { _ in
             completionHandler?()
         })
     }

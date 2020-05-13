@@ -55,7 +55,7 @@ public class FCHerokuGameCardView: UIView {
         label.isUserInteractionEnabled = false
         label.textAlignment = .center
         return label
-    } ()
+    }()
     /// Prepare the ui for back card status.
     fileprivate func layoutUIForBackStatus() {
         self.symBolLabel.backgroundColor = closedCardBGColor

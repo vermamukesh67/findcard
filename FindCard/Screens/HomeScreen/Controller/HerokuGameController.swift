@@ -87,7 +87,6 @@ extension HerokuGameController {
 
 // MARK: Game Events
 extension HerokuGameController {
-    
     /// Updates the card and its UI at given indexpath
     /// - Parameters:
     ///   - indexPath: IndexPath object.
@@ -105,7 +104,7 @@ extension HerokuGameController {
         viewModel.increastTotalStep()
         self.lblTotalSteps.text = "STEPS: \(viewModel.totalStpes)"
     }
-    
+    /// Check for pair match and update the ui accordingly.
     func checkForPairMatching(indexPath: IndexPath) {
         viewModel.addDataIntoOpenCard(card: viewModel.getData(index: indexPath.row))
         if viewModel.isPairMatched() {
@@ -126,7 +125,6 @@ extension HerokuGameController {
                 }
                 prevSelectedcell.updateCell(card: viewModel.getData(index: lastSelectedIndex), disPlayText: viewModel.cardBackText, isAnimate: true)
                 currentCell.updateCell(card: viewModel.getData(index: indexPath.row), disPlayText: viewModel.cardBackText, isAnimate: true)
-                
             } else {
                 /// store the previous selected card.
                 viewModel.lastSelectedIndex = indexPath.row
@@ -144,7 +142,6 @@ extension HerokuGameController {
             })
         }
     }
-    
     /// Reset the game and reload the game ui.
     func resetGame() {
         viewModel.resetGameData()
@@ -157,9 +154,9 @@ extension HerokuGameController {
         self.collectionView.performBatchUpdates({
             self.collectionView.deleteItems(at: indexpaths)
             self.collectionView.insertItems(at: indexpaths)
-        }) { (isDone) in
+        }, completion: { _ in
             self.viewModel.isPlaying = false
-        }
+        })
         self.lblTotalSteps.text = "STEPS: \(viewModel.totalStpes)"
     }
 }

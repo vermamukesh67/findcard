@@ -21,7 +21,6 @@ struct HerokuGameViewModel {
         }
         allCardData.shuffle()
     }
-    
     /// Init the game with total numbers of pair.
     /// - Parameter totalPair: Int value
     init(totalPair: Int) {
@@ -104,7 +103,7 @@ struct HerokuGameViewModel {
     /// Returns the total step played.
     private(set) var totalStpes: Int = 0
     /// Stores the previous selected index in game,
-    var lastSelectedIndex: Int? = nil
+    var lastSelectedIndex: Int?
     /// Returns true if game is playing.
     var isPlaying = false
     /// Returns the total number of card in each row.
