@@ -12,7 +12,6 @@ class HerokuGameController: UIViewController, UICollectionViewDelegate, UICollec
     @IBOutlet var lblTotalSteps: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     var viewModel = HerokuGameViewModel(totalPair: 6)
-    var isResetData = false
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.register(UINib.init(nibName: "HerokuGameCell", bundle: Bundle.main), forCellWithReuseIdentifier: "HerokuGameCell")
@@ -23,10 +22,18 @@ class HerokuGameController: UIViewController, UICollectionViewDelegate, UICollec
     }
     func resetGame() {
         viewModel.resetGameData()
-        isResetData = true
-        isResetData = false
+        viewModel.isPlaying = true
+        var indexpaths: [IndexPath] = []
+        for (index, _) in viewModel.allCardData.enumerated() {
+            indexpaths.append(IndexPath.init(row: index, section: 0))
+        }
+        self.collectionView.performBatchUpdates({
+            self.collectionView.deleteItems(at: indexpaths)
+            self.collectionView.insertItems(at: indexpaths)
+        }) { (isDone) in
+            self.viewModel.isPlaying = false
+        }
         self.lblTotalSteps.text = "STEPS: \(viewModel.totalStpes)"
-        collectionView.reloadData()
     }
 }
 extension HerokuGameController {
@@ -37,7 +44,7 @@ extension HerokuGameController {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HerokuGameCell", for: indexPath) as? HerokuGameCell else {
             return UICollectionViewCell()
         }
-         cell.updateCell(card: viewModel.getData(index: indexPath.row), disPlayText: viewModel.cardBackText, isAnimate: isResetData)
+         cell.updateCell(card: viewModel.getData(index: indexPath.row), disPlayText: viewModel.cardBackText, isAnimate: viewModel.isPlaying)
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
