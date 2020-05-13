@@ -15,23 +15,23 @@ class HerokuGameCell: UICollectionViewCell {
         super.awakeFromNib()
         gmaeView.backgroundColor = .red
     }
-    func updateCell(card: Card, disPlayText: String, isAnimate: Bool = false) {
+    func updateCell(card: Card, disPlayText: String, isAnimate: Bool = false, completionHandler: CompletionHandler? = nil) {
         gmaeView.status = card.status
         switch card.status {
         case .front:
             self.gmaeView.text = card.name
             if isAnimate {
-                flip(direction: UIView.AnimationOptions.transitionFlipFromLeft, duration: flipAnimationDuration)
+                flip(direction: UIView.AnimationOptions.transitionFlipFromLeft, duration: flipAnimationDuration, completionHandler: completionHandler)
             }
         case .resloved:
             self.gmaeView.text = card.name
             if isAnimate {
-                flip(direction: UIView.AnimationOptions.transitionFlipFromLeft, duration: flipAnimationDuration)
+                flip(direction: UIView.AnimationOptions.transitionFlipFromLeft, duration: flipAnimationDuration, completionHandler: completionHandler)
             }
         default:
             self.gmaeView.text = disPlayText
             if isAnimate {
-                flip(direction: UIView.AnimationOptions.transitionFlipFromRight, duration: flipAnimationDuration)
+                flip(direction: UIView.AnimationOptions.transitionFlipFromRight, duration: flipAnimationDuration, completionHandler: completionHandler)
             }
         }
     }

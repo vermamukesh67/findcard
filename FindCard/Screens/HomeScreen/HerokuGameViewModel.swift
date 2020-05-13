@@ -90,6 +90,7 @@ struct HerokuGameViewModel {
     }
     private(set) var totalStpes: Int = 0
     var lastSelectedIndex: Int? = nil
+    var isPlaying = false
 }
 class Card {
     var name: String

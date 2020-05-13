@@ -68,17 +68,20 @@ public class FCHerokuGameCardView: UIView {
         layoutUIForFrontStatus()
     }
     @objc func symbolButtonTap() {
-        self.isCardClosed = !self.isCardClosed
-        (self.isCardClosed) ? layoutUIForFrontStatus() : layoutUIForBackStatus()
-        flip(direction: (self.isCardClosed) ? UIView.AnimationOptions.transitionFlipFromRight : UIView.AnimationOptions.transitionFlipFromLeft, duration: flipAnimationDuration, completionHandler: {
-            print("symbol handler called")
-            self.selectionHandler?(self.isCardClosed)
-        })
-    }
-    public func resetToDefaultState() {
-        self.isCardClosed = true
-        self.symBolButtton.isUserInteractionEnabled = self.isCardClosed
-        self.symBolButtton.backgroundColor = (isCardClosed) ? openCardBGColor : closedCardBGColor
+        switch status {
+        case .back:
+            self.status = .front
+        case .front:
+            self.status = .back
+        default:
+            break
+        }
+        if self.status != .resloved {
+            flip(direction: (self.status == .back) ? UIView.AnimationOptions.transitionFlipFromRight : UIView.AnimationOptions.transitionFlipFromLeft, duration: flipAnimationDuration, completionHandler: {
+                print("symbol handler called")
+                self.selectionHandler?(true)
+            })
+        }
     }
     public var selectionHandler: SelectionHandler? {
         didSet {
@@ -91,7 +94,6 @@ public class FCHerokuGameCardView: UIView {
             }
         }
     }
-    public var isCardClosed = true
     public var status: CardStatus = .back {
         didSet {
             switch self.status {

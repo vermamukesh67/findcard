@@ -24,9 +24,9 @@ class HerokuGameController: UIViewController, UICollectionViewDelegate, UICollec
     func resetGame() {
         viewModel.resetGameData()
         isResetData = true
-        self.collectionView.reloadData()
         isResetData = false
         self.lblTotalSteps.text = "STEPS: \(viewModel.totalStpes)"
+        collectionView.reloadData()
     }
 }
 extension HerokuGameController {
@@ -48,36 +48,51 @@ extension HerokuGameController {
         return UIEdgeInsets.init(top: 10, left: 10, bottom: 10, right: 10)
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if viewModel.getStatus(index: indexPath.row) == .resloved {
+        if viewModel.getStatus(index: indexPath.row) != .back || viewModel.isPlaying {
            return
         }
         guard let cell = collectionView.cellForItem(at: indexPath) as? HerokuGameCell else {
             return
         }
+        viewModel.isPlaying = true
+        updateCard(indexPath, collectionView, cell)
+        viewModel.increastTotalStep()
+        self.lblTotalSteps.text = "STEPS: \(viewModel.totalStpes)"
+    }
+    fileprivate func updateCard(_ indexPath: IndexPath, _ collectionView: UICollectionView, _ cell: HerokuGameCell) {
+        viewModel.updateCardStatus(index: indexPath.row)
+        cell.updateCell(card: viewModel.getData(index: indexPath.row), disPlayText: viewModel.cardBackText, isAnimate: true, completionHandler: {
+            self.viewModel.isPlaying = false
+            self.checkForPairMatching(indexPath: indexPath)
+        })
+    }
+    func checkForPairMatching(indexPath: IndexPath) {
         viewModel.addDataIntoOpenCard(card: viewModel.getData(index: indexPath.row))
         if viewModel.isPairMatched() {
             viewModel.lastSelectedIndex = nil
+            self.checkIfGameFinished()
         } else {
             if let lastSelectedIndex = viewModel.lastSelectedIndex {
                 viewModel.lastSelectedIndex = nil
                 let lastIndexPath = IndexPath.init(row: lastSelectedIndex, section: 0)
                 viewModel.setStaus(index: lastSelectedIndex, status: .back)
+                viewModel.setStaus(index: indexPath.row, status: .back)
                 guard let prevSelectedcell = collectionView.cellForItem(at: lastIndexPath) as? HerokuGameCell else {
-                           return
-                       }
-                  prevSelectedcell.updateCell(card: viewModel.getData(index: lastSelectedIndex), disPlayText: viewModel.cardBackText, isAnimate: true)
-               
+                    return
+                }
+                guard let currentCell = collectionView.cellForItem(at: indexPath) as? HerokuGameCell else {
+                    return
+                }
+                prevSelectedcell.updateCell(card: viewModel.getData(index: lastSelectedIndex), disPlayText: viewModel.cardBackText, isAnimate: true)
+                currentCell.updateCell(card: viewModel.getData(index: indexPath.row), disPlayText: viewModel.cardBackText, isAnimate: true)
+                
             } else {
-                 viewModel.lastSelectedIndex = indexPath.row
-                viewModel.updateCardStatus(index: indexPath.row)
+                viewModel.lastSelectedIndex = indexPath.row
+                
             }
         }
-         cell.updateCell(card: viewModel.getData(index: indexPath.row), disPlayText: viewModel.cardBackText, isAnimate: true)
-        viewModel.increastTotalStep()
-        self.lblTotalSteps.text = "STEPS: \(viewModel.totalStpes)"
-        checkForGameFinishStatus()
     }
-    func checkForGameFinishStatus() {
+    func checkIfGameFinished() {
         if viewModel.isGameFinished() {
             let actionSheet = UIAlertController(title: "Congratulations!", message: "You won this game by \(viewModel.totalStpes) steps", preferredStyle: .alert)
             actionSheet.addAction(UIAlertAction(title: "Try another round", style: .default, handler: { (_)in
@@ -86,5 +101,6 @@ extension HerokuGameController {
             self.present(actionSheet, animated: true, completion: {
             })
         }
+        
     }
 }
