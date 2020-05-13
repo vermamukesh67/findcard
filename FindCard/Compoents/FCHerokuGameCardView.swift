@@ -36,16 +36,15 @@ public class FCHerokuGameCardView: UIView {
         super.init(coder: aDecoder)
         commonInit()
     }
+    public override func layoutSubviews() {
+        super.layoutSubviews()
+        symBolLabel.fixConstraintsInView(self)
+    }
     fileprivate func commonInit() {
         self.addSubview(symBolLabel)
-        symBolLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 0).isActive = true
-        symBolLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 0).isActive = true
-        symBolLabel.widthAnchor.constraint(equalToConstant: self.frame.size.width).isActive = true
-        symBolLabel.heightAnchor.constraint(equalToConstant: self.frame.size.height).isActive = true
-        //symBolButtton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0).isActive = true
     }
     lazy var symBolLabel: UILabel = {
-        let label = UILabel.init()
+        let label = UILabel.init(frame: CGRect.zero)
         label.backgroundColor = openCardBGColor
         label.font = UIFont.boldSystemFont(ofSize: 20)
         label.layer.cornerRadius = 2.0
