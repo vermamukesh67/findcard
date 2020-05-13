@@ -9,7 +9,7 @@
 import UIKit
 
 // MARK: View life cycle
-class HerokuGameController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class HerokuGameController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     @IBOutlet var lblTotalSteps: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     var viewModel = HerokuGameViewModel(totalPair: 6)
@@ -20,6 +20,48 @@ class HerokuGameController: UIViewController, UICollectionViewDelegate, UICollec
     }
     @IBAction func btnRestartTapped(_ sender: Any) {
         resetGame()
+    }
+}
+
+// MARK: UICollectionViewDelegateFlowLayout
+extension HerokuGameController: UICollectionViewDelegateFlowLayout {
+    fileprivate var sectionInsets: UIEdgeInsets {
+        return UIEdgeInsets.init(top: interitemSpace, left: interitemSpace, bottom: interitemSpace, right: interitemSpace)
+    }
+
+    fileprivate var itemsPerRow: CGFloat {
+        return CGFloat(viewModel.numberOfCardPerRow)
+    }
+
+    fileprivate var interitemSpace: CGFloat {
+        return 10.0
+    }
+
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let sectionPadding = sectionInsets.left * (itemsPerRow + 1)
+        let interitemPadding = max(0.0, itemsPerRow - 1) * interitemSpace
+        let availableWidth = collectionView.bounds.width - sectionPadding - interitemPadding
+        let widthPerItem = availableWidth / itemsPerRow
+
+        return CGSize(width: widthPerItem, height: widthPerItem)
+    }
+
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        insetForSectionAt section: Int) -> UIEdgeInsets {
+        return sectionInsets
+    }
+
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return interitemSpace
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return interitemSpace
     }
 }
 
@@ -34,13 +76,6 @@ extension HerokuGameController {
         }
         cell.updateCell(card: viewModel.getData(index: indexPath.row), disPlayText: viewModel.cardBackText, isAnimate: viewModel.isPlaying)
         return cell
-    }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width: Int = (Int(collectionView.frame.size.width) - 40) / viewModel.numberOfCardPerRow
-        return CGSize.init(width:  width, height: width)
-    }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets.init(top: 10, left: 10, bottom: 10, right: 10)
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if viewModel.getStatus(index: indexPath.row) != .back || viewModel.isPlaying {

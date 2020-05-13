@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// A UICollectionViewCell with card view inside.
 class HerokuGameCell: UICollectionViewCell {
     @IBOutlet weak var gmaeView: FCHerokuGameCardView!
     let flipAnimationDuration = 0.5
@@ -15,6 +16,7 @@ class HerokuGameCell: UICollectionViewCell {
         super.awakeFromNib()
         gmaeView.backgroundColor = .red
     }
+    // Update the cell
     func updateCell(card: Card, disPlayText: String, isAnimate: Bool = false, completionHandler: CompletionHandler? = nil) {
         gmaeView.status = card.status
         switch card.status {
