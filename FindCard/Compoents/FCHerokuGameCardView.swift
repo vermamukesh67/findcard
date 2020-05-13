@@ -35,9 +35,18 @@ public class FCHerokuGameCardView: UIView {
         super.init(coder: aDecoder)
         commonInit()
     }
+    fileprivate func applyConstraint() {
+        symBolLabel.frame = self.bounds
+        NSLayoutConstraint.activate([
+            symBolLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 0),
+            symBolLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0),
+            symBolLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0),
+            symBolLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0)
+        ])
+    }
     public override func layoutSubviews() {
         super.layoutSubviews()
-        symBolLabel.fixConstraintsInView(self)
+        applyConstraint()
     }
     fileprivate func commonInit() {
         self.addSubview(symBolLabel)
@@ -50,7 +59,6 @@ public class FCHerokuGameCardView: UIView {
         label.clipsToBounds = true
         label.layer.borderColor = UIColor.white.cgColor
         label.layer.borderWidth = 2.0
-        label.translatesAutoresizingMaskIntoConstraints = false
         label.isUserInteractionEnabled = false
         label.textAlignment = .center
         return label
