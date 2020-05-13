@@ -15,7 +15,7 @@ struct HerokuGameViewModel {
         totalStpes = 0
         lastSelectedIndex = nil
         for _ in 1...self.totalPairs {
-            let number = Int.random(in: minimumCardNumber ... maxmimumCardNumber)
+            let number = Int(arc4random_uniform(UInt32(maxmimumCardNumber)) + UInt32(minimumCardNumber))//Int.random(in: minimumCardNumber ... maxmimumCardNumber)
             allCardData.append(Card.init(name: String(number)))
             allCardData.append(Card.init(name: String(number)))
         }
