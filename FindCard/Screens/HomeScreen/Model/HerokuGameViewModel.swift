@@ -2,12 +2,12 @@ import Foundation
 
 /// Handle the game.
 struct HerokuGameViewModel {
-    private var allCardData: [Card] = []
-    private var revealedCardData: [Card] = []
-    private var totalPairs: Int
-    private var openCardData: [Card] = []
-    private let minimumCardNumber = 1
-    private let maxmimumCardNumber = 100
+    private(set) var allCardData: [Card] = []
+    private(set) var revealedCardData: [Card] = []
+    private(set) var totalPairs: Int
+    private(set) var openCardData: [Card] = []
+    let minimumCardNumber = 1
+    let maxmimumCardNumber = 100
     mutating func resetGameData() {
         allCardData.removeAll()
         revealedCardData.removeAll()
@@ -58,7 +58,7 @@ struct HerokuGameViewModel {
         openCardData.removeAll()
     }
     /// Returns true if any card is already opened.
-    var isCardAlreadyOpend: Bool {
+    func isCardAlreadyOpend() -> Bool {
         return openCardData.count > 0
     }
     /// Return true if all pair matched in game so that the game is finished.

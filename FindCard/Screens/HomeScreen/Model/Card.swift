@@ -9,7 +9,7 @@
 import Foundation
 /// Holds the card data.
 class Card {
-    var name: String
+    private(set) var name: String
     var status: CardStatus = .back
     init(name: String) {
         self.name = name

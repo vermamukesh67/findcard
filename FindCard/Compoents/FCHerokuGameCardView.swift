@@ -10,7 +10,6 @@ public enum CardStatus {
 }
 /// A UIView class that display the card.
 public class FCHerokuGameCardView: UIView {
-    let flipAnimationDuration = 1.0
     let openCardBGColor = UIColor.lightGray
     let closedCardBGColor = UIColor.systemBlue
     /**
@@ -43,7 +42,7 @@ public class FCHerokuGameCardView: UIView {
     fileprivate func commonInit() {
         self.addSubview(symBolLabel)
     }
-    lazy var symBolLabel: UILabel = {
+    lazy private(set) var symBolLabel: UILabel = {
         let label = UILabel.init(frame: CGRect.zero)
         label.backgroundColor = openCardBGColor
         label.font = UIFont.boldSystemFont(ofSize: 20)
@@ -57,15 +56,15 @@ public class FCHerokuGameCardView: UIView {
         return label
     }()
     /// Prepare the ui for back card status.
-    fileprivate func layoutUIForBackStatus() {
+    func layoutUIForBackStatus() {
         self.symBolLabel.backgroundColor = closedCardBGColor
     }
     /// Prepare the ui for front card status.
-    fileprivate func layoutUIForFrontStatus() {
+    func layoutUIForFrontStatus() {
         self.symBolLabel.backgroundColor = openCardBGColor
     }
     /// Prepare the ui for back card resolved.
-    fileprivate func layoutUIForResolvedStatus() {
+    func layoutUIForResolvedStatus() {
         layoutUIForFrontStatus()
     }
     /// Update the card status.

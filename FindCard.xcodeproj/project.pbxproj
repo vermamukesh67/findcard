@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		4A5B266F246AEB940041B22E /* HerokuGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5B266E246AEB940041B22E /* HerokuGameViewModel.swift */; };
 		4A5B2673246B9E790041B22E /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5B2672246B9E790041B22E /* Card.swift */; };
+		4A5B2680246BB6ED0041B22E /* CardModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5B267F246BB6ED0041B22E /* CardModelTest.swift */; };
+		4A5B2688246BB79D0041B22E /* GameCardViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5B2687246BB79D0041B22E /* GameCardViewModelTest.swift */; };
+		4A5B268A246BC6C30041B22E /* CardCompoentTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5B2689246BC6C30041B22E /* CardCompoentTest.swift */; };
 		4A938613246AA20C00AD5CE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A938612246AA20C00AD5CE5 /* AppDelegate.swift */; };
 		4A938617246AA20C00AD5CE5 /* HerokuGameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A938616246AA20C00AD5CE5 /* HerokuGameController.swift */; };
 		4A93861A246AA20C00AD5CE5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A938618246AA20C00AD5CE5 /* Main.storyboard */; };
@@ -21,9 +24,24 @@
 		4A938634246AB8DD00AD5CE5 /* FCUIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A938633246AB8DD00AD5CE5 /* FCUIViewExtension.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		4A5B2682246BB6ED0041B22E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4A938607246AA20C00AD5CE5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4A93860E246AA20C00AD5CE5;
+			remoteInfo = FindCard;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		4A5B266E246AEB940041B22E /* HerokuGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HerokuGameViewModel.swift; sourceTree = "<group>"; };
 		4A5B2672246B9E790041B22E /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		4A5B267D246BB6ED0041B22E /* FindCardUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FindCardUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A5B267F246BB6ED0041B22E /* CardModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModelTest.swift; sourceTree = "<group>"; };
+		4A5B2681246BB6ED0041B22E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4A5B2687246BB79D0041B22E /* GameCardViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCardViewModelTest.swift; sourceTree = "<group>"; };
+		4A5B2689246BC6C30041B22E /* CardCompoentTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCompoentTest.swift; sourceTree = "<group>"; };
 		4A93860F246AA20C00AD5CE5 /* FindCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A938612246AA20C00AD5CE5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4A938616246AA20C00AD5CE5 /* HerokuGameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HerokuGameController.swift; sourceTree = "<group>"; };
@@ -39,6 +57,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		4A5B267A246BB6ED0041B22E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4A93860C246AA20C00AD5CE5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -101,10 +126,22 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		4A5B267E246BB6ED0041B22E /* FindCardUnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				4A5B267F246BB6ED0041B22E /* CardModelTest.swift */,
+				4A5B2681246BB6ED0041B22E /* Info.plist */,
+				4A5B2687246BB79D0041B22E /* GameCardViewModelTest.swift */,
+				4A5B2689246BC6C30041B22E /* CardCompoentTest.swift */,
+			);
+			path = FindCardUnitTests;
+			sourceTree = "<group>";
+		};
 		4A938606246AA20C00AD5CE5 = {
 			isa = PBXGroup;
 			children = (
 				4A938611246AA20C00AD5CE5 /* FindCard */,
+				4A5B267E246BB6ED0041B22E /* FindCardUnitTests */,
 				4A938610246AA20C00AD5CE5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -113,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				4A93860F246AA20C00AD5CE5 /* FindCard.app */,
+				4A5B267D246BB6ED0041B22E /* FindCardUnitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -160,6 +198,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		4A5B267C246BB6ED0041B22E /* FindCardUnitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4A5B2684246BB6ED0041B22E /* Build configuration list for PBXNativeTarget "FindCardUnitTests" */;
+			buildPhases = (
+				4A5B2679246BB6ED0041B22E /* Sources */,
+				4A5B267A246BB6ED0041B22E /* Frameworks */,
+				4A5B267B246BB6ED0041B22E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4A5B2683246BB6ED0041B22E /* PBXTargetDependency */,
+			);
+			name = FindCardUnitTests;
+			productName = FindCardUnitTests;
+			productReference = 4A5B267D246BB6ED0041B22E /* FindCardUnitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		4A93860E246AA20C00AD5CE5 /* FindCard */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4A938623246AA21300AD5CE5 /* Build configuration list for PBXNativeTarget "FindCard" */;
@@ -188,6 +244,10 @@
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = com.mukesh;
 				TargetAttributes = {
+					4A5B267C246BB6ED0041B22E = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = 4A93860E246AA20C00AD5CE5;
+					};
 					4A93860E246AA20C00AD5CE5 = {
 						CreatedOnToolsVersion = 11.3.1;
 					};
@@ -207,11 +267,19 @@
 			projectRoot = "";
 			targets = (
 				4A93860E246AA20C00AD5CE5 /* FindCard */,
+				4A5B267C246BB6ED0041B22E /* FindCardUnitTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		4A5B267B246BB6ED0041B22E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4A93860D246AA20C00AD5CE5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -247,6 +315,16 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		4A5B2679246BB6ED0041B22E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A5B2680246BB6ED0041B22E /* CardModelTest.swift in Sources */,
+				4A5B2688246BB79D0041B22E /* GameCardViewModelTest.swift in Sources */,
+				4A5B268A246BC6C30041B22E /* CardCompoentTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4A93860B246AA20C00AD5CE5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -263,6 +341,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4A5B2683246BB6ED0041B22E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4A93860E246AA20C00AD5CE5 /* FindCard */;
+			targetProxy = 4A5B2682246BB6ED0041B22E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		4A938618246AA20C00AD5CE5 /* Main.storyboard */ = {
@@ -284,6 +370,44 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		4A5B2685246BB6ED0041B22E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = FindCardUnitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mukesh.FindCardUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FindCard.app/FindCard";
+			};
+			name = Debug;
+		};
+		4A5B2686246BB6ED0041B22E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = FindCardUnitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mukesh.FindCardUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FindCard.app/FindCard";
+			};
+			name = Release;
+		};
 		4A938621246AA21300AD5CE5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -435,6 +559,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		4A5B2684246BB6ED0041B22E /* Build configuration list for PBXNativeTarget "FindCardUnitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A5B2685246BB6ED0041B22E /* Debug */,
+				4A5B2686246BB6ED0041B22E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4A93860A246AA20C00AD5CE5 /* Build configuration list for PBXProject "FindCard" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
