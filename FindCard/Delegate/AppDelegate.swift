@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  FindCard
 //
-//  Created by Chandresh Maurya on 12/05/20.
+//  Created by Varma Mukesh on 12/05/20.
 //  Copyright © 2020 com.mukesh. All rights reserved.
 //
 

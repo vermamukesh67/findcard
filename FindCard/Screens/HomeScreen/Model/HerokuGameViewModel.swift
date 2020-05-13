@@ -1,21 +1,13 @@
 import Foundation
-// MARK: - MemoryGameDelegate
 
-protocol HerokuGameDelegate {
-    func memoryGameDidStart(game: Card)
-    func memoryGame(game: Card, showCards cards: [Card])
-    func memoryGame(game: Card, hideCards cards: [Card])
-    func memoryGameDidEnd(game: Card)
-}
-
+/// Handle the game.
 struct HerokuGameViewModel {
-    var allCardData: [Card] = []
-    var revealedCardData: [Card] = []
-    let numberOfCellPerRow = 3
-    var totalPairs: Int
-    var openCardData: [Card] = []
-    let minimumCardNumber = 1
-    let maxmimumCardNumber = 100
+    private var allCardData: [Card] = []
+    private var revealedCardData: [Card] = []
+    private var totalPairs: Int
+    private var openCardData: [Card] = []
+    private let minimumCardNumber = 1
+    private let maxmimumCardNumber = 100
     mutating func resetGameData() {
         allCardData.removeAll()
         revealedCardData.removeAll()
@@ -30,34 +22,51 @@ struct HerokuGameViewModel {
         allCardData.shuffle()
     }
     
+    /// Init the game with total numbers of pair.
+    /// - Parameter totalPair: Int value
     init(totalPair: Int) {
         self.totalPairs = totalPair
         resetGameData()
     }
+    /// Get card data at index
+    /// - Parameter index: Int value
     func getData(index: Int) -> Card {
         return allCardData[index]
     }
+    /// Get the card status at index.
+    /// - Parameter index: Int value
     func getStatus(index: Int) -> CardStatus {
         return allCardData[index].status
     }
+    /// Sets the given statu value at index.
+    /// - Parameters:
+    ///   - index: Int value
+    ///   - status: CardStatus value
     func setStaus(index: Int, status: CardStatus) {
         allCardData[index].status = status
     }
+    /// Get the total numbers of card in the game.
     func getTotalNumberOfCardData() -> Int {
         return allCardData.count
     }
+    /// Adds the card in open card array.
+    /// - Parameter card: Card object.
     mutating func addDataIntoOpenCard(card: Card) {
         openCardData.append(card)
     }
+    /// Removes all the open card data .
     mutating func removeAlldataFromOpenCard() {
         openCardData.removeAll()
     }
+    /// Returns true if any card is already opened.
     var isCardAlreadyOpend: Bool {
         return openCardData.count > 0
     }
+    /// Return true if all pair matched in game so that the game is finished.
     func isGameFinished() -> Bool {
         return allCardData.count == revealedCardData.count
     }
+    /// Returns true if pair is matched for open cards.
     mutating func isPairMatched() -> Bool {
         if self.openCardData.count == 2 {
             let matched = (self.openCardData[0].name == self.openCardData[1].name)
@@ -72,9 +81,12 @@ struct HerokuGameViewModel {
         }
         return false
     }
+    /// Returns the
     var cardBackText: String {
         return "?"
     }
+    /// Update the card status automatically from back to front and front to back.
+    /// - Parameter index: A Int value
     mutating func updateCardStatus(index: Int) {
         switch allCardData[index].status {
         case .back:
@@ -85,24 +97,16 @@ struct HerokuGameViewModel {
             break
         }
     }
+    /// Auto increment the steps played.
     mutating func increastTotalStep() {
         totalStpes += 1
     }
+    /// Returns the total step played.
     private(set) var totalStpes: Int = 0
+    /// Stores the previous selected index in game,
     var lastSelectedIndex: Int? = nil
+    /// Returns true if game is playing.
     var isPlaying = false
-}
-class Card {
-    var name: String
-    var status: CardStatus = .back
-    init(name: String) {
-        self.name = name
-    }
-}
-extension Array {
-    mutating func shuffle() {
-        for _ in 0...self.count {
-            sort { (_,_) in arc4random() < arc4random() }
-        }
-    }
+    /// Returns the total number of card in each row.
+    var numberOfCardPerRow = 3
 }
